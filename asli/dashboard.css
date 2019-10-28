@@ -1,0 +1,27 @@
+.navbar-brand{
+}
+
+.atas{
+	width: 100%;
+
+}
+h1{
+    font-size: 70px !important;
+    font-weight: bold;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: black;
+}
+.img{
+  height: 250px;
+  width: auto;
+}
+.garis{
+
+    margin-top: -20px;
+    width: 40%;
+    height: 10%;
+    border-width: 7px;
+    border-radius: 100px;
+    background-color: white;
+
+}

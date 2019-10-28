@@ -1,0 +1,7 @@
+.jumbotron {
+	background-image: url(img/jumbo.jpg);
+	background-size: cover;
+}
+.jumbotron .display-5{
+	color: white;
+}

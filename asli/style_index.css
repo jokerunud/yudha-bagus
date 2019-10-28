@@ -1,0 +1,131 @@
+		.jumbotron .display-5{
+			margin-top: 200px;
+		}
+		.navbar{
+			font-family: gotham;
+		}
+
+		.up {
+			background:
+			linear-gradient(
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.5)
+			),
+			url(img/jumbo.jpg);
+			background-size: cover;
+			margin-top: -80px;
+			height: 700px;
+			font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+		}
+		.jumbotron .my-4{
+			border-color: white;
+			width: 180px;
+			margin-left: 5px;
+			border-width: 3px;
+			border-radius: 100px;
+		}
+		.jumbotron .btn{
+			background-color: white;
+			border-radius: 50px;
+			border:none;
+			color: black;
+			padding: 10px 25px 10px 25px;
+
+		}
+		.navbar-brand{
+			font-size: 30px;
+		}
+		.desc{
+			font-size: 60px;
+			margin-top:10px;
+			margin-bottom: -30px;
+			font-family: gotham;
+		}
+		.my-5{
+			border-color: #b1adad;
+			width: 50%;
+			margin-left: 2px;
+			border-width: 3px;
+			margin-bottom: -43px;
+		}
+		.loc{
+			margin-top: -37px;
+			color: #4c4c4c;
+			font-family: gotham;
+		}
+.olink{
+	text-decoration: none !important;
+	color: black;
+}
+.bot{
+	background:
+	linear-gradient(
+	rgba(0, 0, 0, 0.4),
+	rgba(0, 0, 0, 0.4)
+	),
+	url(img/17-0081916.jpg);
+	background-size: cover;
+	height: 670px;
+}
+.ling{
+	margin-top: 10px;
+	width: 200px;
+	height: 200px;
+	background: #ffff;
+	border-radius: 100%;
+	border : 3px solid #007bff;
+}
+
+.te{
+	text-align:center;
+	line-height: 200px;
+	font-size: 20px;
+}
+.display-4{
+	margin-top: 200px;
+}
+
+.text-round{
+	text-align: center;
+}
+
+.text-round h5{
+	line-height: 200px;
+	padding-left: 20px;
+}
+.spc{
+	width: 10%;
+}
+.desc{
+	color: #ffbb00;
+	font-family: gotham;
+}
+.botn{
+	margin-top: 20px;
+	background-color: white;
+	border-radius: 50px;
+	border:none;
+	color: black;
+	padding: 10px 30px 10px 30px;
+}
+.ket{
+	font-size: 15px;
+	font-family: gotham;
+}
+.jenis{
+	border-color: white;
+	width: 50%;
+	margin-left: 5px;
+	border-width: 3px;
+	border-radius: 100px;
+}
+.uhu{
+	font-family: gotham;
+}
+.line{
+	line-height: normal;
+	font-size: 30px;
+}
+.card{
+	border: 3px solid gray !important;
+}

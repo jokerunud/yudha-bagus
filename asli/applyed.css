@@ -1,0 +1,51 @@
+.jumbotron {
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("gambar/1818.jpg");
+  	background-size: 500px;
+    width: 100%;
+    margin-top: auto;
+    background-size: contain;
+}
+.garisputih {
+	
+	width: 29%;
+	height: 19%;
+    margin-top: -4px;
+    border-width: 1px;
+}
+.bodykiri {
+	margin-top: 80px;
+
+}
+.card-body {
+	padding-left:93px;
+}
+.ctextatas {
+	margin-left: -80px;
+}
+.textkanan {
+	margin-left: 280px;
+}
+.textkanan1 {
+	margin-left: 380px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.butkanan {
+	margin-left: 440px;
+}
+.gambar1 {
+	margin-top: 80px;
+	margin-left: 320px;
+
+}
+.hr1 {
+	width: 29%;
+	margin-top: -4px;
+	border-width: 7px;
+	margin-left: 2px;
+	background-color: white;
+}
+
+.kotakapply {
+
+	margin-left: 130px;
+}

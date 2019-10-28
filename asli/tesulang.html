@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrasi perusahaan</title>
+  <link href="cssregistrasi.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <title>Populate City Dropdown Using jQuery Ajax</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+      $("select.country").change(function(){
+          var selectedCountry = $(".country option:selected").val();
+          $.ajax({
+              type: "POST",
+              url: "process-request.php",
+              data: { country : selectedCountry }
+          }).done(function(data){
+              $("#response").html(data);
+          });
+      });
+  });
+</script>
+
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="Joker.html">JOKER</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active" style="border: 1px solid !important">
+        <a class="nav-link" href="dashborad.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      </li>
+      <li class="nav-item active" style="border: 1px solid !important; margin-left: 6px;">
+        <a class="nav-link" href="#">Tips Loker <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active" style="border: 1px solid !important; margin-left: 6px;">
+        <a class="nav-link" href="login.php">MASUK <span class="sr-only">(current)</span></a>
+      </li>
+
+   </ul>
+  </div>
+</nav>
+
+
+
+<center>
+
+  <div class="h1 text-white"><h1>FORM DAFTAR PERUSAHAAN</h1></div>
+  <hr class="hr1">
+
+
+  <!--FORMULIR -->
+
+  <form class="form-override shadow-lg" action="" method="post" enctype="multipart/form-data" >
+  <div class="form-col">
+
+
+    <div class="form-group col-md-12">
+     <!--Nama -->
+      <input type="text" class="form-control form-control-lg" id="inputNama4" placeholder="NAMA PERUSHAAN" name="nama_perusahaan">
+    </div>
+
+    <div class="form-group col-md-12">
+      <!--ALAMAT -->
+      <input type="text" class="form-control form-control-lg" id="inputNim4" placeholder="ALAMAT" name="alamat">
+    </div>
+
+
+
+      <div class="form-group col-md-12">
+      <!--KONTAK -->
+        <input type="text" class="form-control form-control-lg" id="inputSemester4" placeholder="KONTAK" name="kontak">
+      </div>
+
+       <div class="form-group col-md-12">
+        <!--LOGO -->
+        <input type="file" class="form-control form-control-lg" id="inputSemester4" placeholder="" name="logo">
+      </div>
+
+
+    <div class="form-group col-md-12">
+        <!--USERNAME-->
+      <input type="text" class="form-control form-control-lg" id="inputFakultas" placeholder="USERNAME" name="username">
+    </div>
+
+      <div class="form-group col-md-12">
+    <!--PASSWORD -->
+      <input type="password" class="form-control form-control-lg" id="inputProdi4" placeholder="PASSWORD" name="password">
+    </div>
+
+  </div>
+
+
+
+
+<button type="submit" class="btn btn-outline-dark btn-lg" name="post">DAFTAR</button>
+</form>
+
+ </div>
+
+</center>
+
+<?php
+
+
+
+  if (isset($_POST['post'])) {
+    $nama_perusahaan = $_POST['nama_perusahaan'];
+    $alamat = $_POST['alamat'];
+    $kontak = $_POST['kontak'];
+    $logo = $_FILES['logo'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+
+
+
+    include("koneksi.php");
+    if (isset($logo["tmp_name"])|| $logo["tmp_name"]=="") {
+      $filepath ="logo/".basename($logo["name"]);
+      move_uploaded_file($logo["tmp_name"],$filepath);
+    }
+
+        $koneksi = mysqli_query($connection,"INSERT INTO perusahaan VALUES('','$nama_perusahaan','$alamat','$kontak','$filepath','$username','$password')");
+        $id_perusahaan = mysqli_insert_id($connection);
+
+          $rows = mysqli_affected_rows($connection);
+
+          if ($rows >0) {
+          $username = $_POST['username'];
+          $password = $_POST['password'];
+
+          $query = mysqli_query($connection, "INSERT INTO akun_perusahaan VALUES ('$username','$id_perusahaan','$password')");
+
+          if ($rows == 1) {
+             echo "databerhasil ditambahkan";
+            exit;
+          }else {
+            echo "salah";
+          }
+
+  }
+
+   }
+
+
+
+
+   ?>
+
+
+
+</body>
+</html>
